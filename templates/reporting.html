@@ -80,6 +80,43 @@
     </div>
     <div class="col-1 "></div>
 </div>
+
+<div class="row" style="margin-top: 70px;">
+    <div class="col-1 "></div>
+    <div class="col-10 card ">
+        <div class="card-body">
+            <h5 class="card-title">CRM Segment-Wise Performance</h5>
+            <br>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="text-align: left;" scope="col">Brand</th>
+                        <th style="text-align: center;" scope="col">Segment</th>
+                        <th style="text-align: center;" scope="col">Total SMS Sent</th>
+                        <th style="text-align: center;" scope="col">Conversion Count</th>
+                        <th style="text-align: center;" scope="col">Conversion %</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for item in crm_data_2%}
+                    <tr>
+                        <td style="text-align: left;"><b>{{item.Brand}}</b></td>
+                        <td style="text-align: center;">{{ item['Segment'] }}</td>
+                        <td style="text-align: center;">{{"{:,}".format(item['Total SMS Sent']|int)}}</td>
+                        <td style="text-align: center;">{{"{:,}".format(item['Total Conversion']|int)}}</td>
+                        <td style="text-align: center;">{{item['Conversion %']}}</td>
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <div class="col-1 "></div>
+</div>
+
 <br>
 <br>
 <br>
